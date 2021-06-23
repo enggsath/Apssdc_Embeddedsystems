@@ -1,0 +1,257 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    06/22/2021  21:26:44  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\AWLcontroller.obj TO .\Objects\DC PRINT (.\Listings\DC.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\AWLcontroller.obj (AWLCONTROLLER)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+
+
+LINK MAP OF MODULE:  .\Objects\DC (AWLCONTROLLER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0008H     UNIT         _DATA_GROUP_
+            IDATA   0010H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0123H     UNIT         ?C?LIB_CODE
+            CODE    0923H     005AH     UNIT         ?PR?MAIN?AWLCONTROLLER
+            CODE    097DH     0049H     UNIT         ?CO?AWLCONTROLLER
+            CODE    09C6H     0041H     UNIT         ?PR?_LEVEL?AWLCONTROLLER
+            CODE    0A07H     002BH     UNIT         ?PR?_LCD_STRING?AWLCONTROLLER
+            CODE    0A32H     0026H     UNIT         ?PR?_LCD_DELAY?AWLCONTROLLER
+            CODE    0A58H     0019H     UNIT         ?PR?LCD_INIT?AWLCONTROLLER
+            CODE    0A71H     0012H     UNIT         ?PR?STOP_MOTOR?AWLCONTROLLER
+            CODE    0A83H     0012H     UNIT         ?PR?RUN_MOTOR?AWLCONTROLLER
+            CODE    0A95H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0AA1H     000AH     UNIT         ?PR?_LCD_CMD?AWLCONTROLLER
+            CODE    0AABH     000AH     UNIT         ?PR?_LCD_DATA?AWLCONTROLLER
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\DC (AWLCONTROLLER)
+
+
+SEGMENT                                 DATA_GROUP 
+  +--> CALLED SEGMENT                 START    LENGTH
+-----------------------------------------------------
+?C_C51STARTUP                         -----    -----
+  +--> ?PR?MAIN?AWLCONTROLLER
+
+?PR?MAIN?AWLCONTROLLER                -----    -----
+  +--> ?PR?LCD_INIT?AWLCONTROLLER
+  +--> ?PR?_LCD_CMD?AWLCONTROLLER
+  +--> ?CO?AWLCONTROLLER
+  +--> ?PR?_LCD_STRING?AWLCONTROLLER
+  +--> ?PR?_LEVEL?AWLCONTROLLER
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  06/22/2021  21:26:44  PAGE 2
+
+
+  +--> ?PR?RUN_MOTOR?AWLCONTROLLER
+  +--> ?PR?STOP_MOTOR?AWLCONTROLLER
+
+?PR?LCD_INIT?AWLCONTROLLER            -----    -----
+  +--> ?PR?_LCD_CMD?AWLCONTROLLER
+
+?PR?_LCD_CMD?AWLCONTROLLER            -----    -----
+  +--> ?PR?_LCD_DELAY?AWLCONTROLLER
+
+?PR?_LCD_STRING?AWLCONTROLLER         0008H    0005H
+  +--> ?PR?_LCD_DATA?AWLCONTROLLER
+
+?PR?_LCD_DATA?AWLCONTROLLER           -----    -----
+  +--> ?PR?_LCD_DELAY?AWLCONTROLLER
+
+?PR?_LEVEL?AWLCONTROLLER              0008H    0008H
+  +--> ?CO?AWLCONTROLLER
+  +--> ?PR?_LCD_CMD?AWLCONTROLLER
+  +--> ?PR?_LCD_DATA?AWLCONTROLLER
+
+?PR?RUN_MOTOR?AWLCONTROLLER           -----    -----
+  +--> ?PR?_LCD_CMD?AWLCONTROLLER
+  +--> ?CO?AWLCONTROLLER
+  +--> ?PR?_LCD_STRING?AWLCONTROLLER
+
+?PR?STOP_MOTOR?AWLCONTROLLER          -----    -----
+  +--> ?PR?_LCD_CMD?AWLCONTROLLER
+  +--> ?CO?AWLCONTROLLER
+  +--> ?PR?_LCD_STRING?AWLCONTROLLER
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\DC (AWLCONTROLLER)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        AWLCONTROLLER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00B0H.5       PUBLIC        in1
+  B:00B0H.6       PUBLIC        in2
+  C:09C6H         PUBLIC        _level
+  C:0923H         PUBLIC        main
+  C:0A38H         PUBLIC        _lcd_delay
+  C:0A07H         PUBLIC        _lcd_string
+  C:0AABH         PUBLIC        _lcd_data
+  B:00B0H.1       PUBLIC        En
+  C:09C1H         SYMBOL        _?ix1000
+  B:00B0H.0       PUBLIC        Rs
+  C:0AA1H         PUBLIC        _lcd_cmd
+  C:0A58H         PUBLIC        lcd_init
+  C:0A71H         PUBLIC        stop_motor
+  C:0A83H         PUBLIC        run_motor
+  -------         PROC          LCD_INIT
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  06/22/2021  21:26:44  PAGE 3
+
+
+  C:0A58H         LINE#         17
+  C:0A58H         LINE#         18
+  C:0A58H         LINE#         19
+  C:0A5DH         LINE#         20
+  C:0A62H         LINE#         21
+  C:0A67H         LINE#         22
+  C:0A6CH         LINE#         23
+  -------         ENDPROC       LCD_INIT
+  -------         PROC          _LCD_CMD
+  D:0007H         SYMBOL        n
+  C:0AA1H         LINE#         26
+  C:0AA1H         LINE#         27
+  C:0AA1H         LINE#         28
+  C:0AA3H         LINE#         29
+  C:0AA5H         LINE#         30
+  C:0AA5H         LINE#         31
+  C:0AA8H         LINE#         32
+  C:0AAAH         LINE#         33
+  -------         ENDPROC       _LCD_CMD
+  -------         PROC          _LCD_DATA
+  D:0007H         SYMBOL        dat
+  C:0AABH         LINE#         35
+  C:0AABH         LINE#         36
+  C:0AABH         LINE#         37
+  C:0AADH         LINE#         38
+  C:0AAFH         LINE#         39
+  C:0AAFH         LINE#         40
+  C:0AB2H         LINE#         41
+  C:0AB4H         LINE#         42
+  -------         ENDPROC       _LCD_DATA
+  -------         PROC          _LCD_STRING
+  D:0008H         SYMBOL        str
+  -------         DO            
+  D:000BH         SYMBOL        i
+  -------         ENDDO         
+  C:0A07H         LINE#         44
+  C:0A0DH         LINE#         45
+  C:0A0DH         LINE#         47
+  C:0A24H         LINE#         48
+  C:0A31H         LINE#         49
+  -------         ENDPROC       _LCD_STRING
+  -------         PROC          L?0032
+  -------         ENDPROC       L?0032
+  -------         PROC          _LCD_DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0A38H         LINE#         50
+  C:0A38H         LINE#         51
+  C:0A38H         LINE#         53
+  C:0A3BH         LINE#         54
+  C:0A57H         LINE#         55
+  -------         ENDPROC       _LCD_DELAY
+  -------         PROC          STOP_MOTOR
+  C:0A71H         LINE#         6
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  06/22/2021  21:26:44  PAGE 4
+
+
+  C:0A71H         LINE#         7
+  C:0A71H         LINE#         8
+  C:0A73H         LINE#         9
+  C:0A75H         LINE#         10
+  C:0A7AH         LINE#         11
+  -------         ENDPROC       STOP_MOTOR
+  -------         PROC          RUN_MOTOR
+  C:0A83H         LINE#         13
+  C:0A83H         LINE#         14
+  C:0A83H         LINE#         15
+  C:0A85H         LINE#         16
+  C:0A87H         LINE#         17
+  C:0A8CH         LINE#         18
+  -------         ENDPROC       RUN_MOTOR
+  -------         PROC          _LEVEL
+  D:0008H         SYMBOL        dat
+  -------         DO            
+  D:0009H         SYMBOL        i
+  D:000BH         SYMBOL        W_level
+  -------         ENDDO         
+  C:09C6H         LINE#         20
+  C:09C8H         LINE#         22
+  C:09DBH         LINE#         23
+  C:09E0H         LINE#         24
+  C:09E0H         LINE#         25
+  C:09E9H         LINE#         26
+  C:09E9H         LINE#         27
+  C:09EEH         LINE#         28
+  C:09F3H         LINE#         29
+  C:09F3H         LINE#         30
+  C:0A06H         LINE#         31
+  -------         ENDPROC       _LEVEL
+  -------         PROC          MAIN
+  C:0923H         LINE#         32
+  C:0923H         LINE#         33
+  C:0923H         LINE#         34
+  C:0926H         LINE#         35
+  C:092BH         LINE#         36
+  C:0934H         LINE#         37
+  C:0939H         LINE#         38
+  C:0942H         LINE#         39
+  C:0945H         LINE#         40
+  C:0945H         LINE#         41
+  C:0945H         LINE#         42
+  C:094AH         LINE#         43
+  C:0953H         LINE#         44
+  C:0958H         LINE#         45
+  C:0961H         LINE#         47
+  C:0966H         LINE#         49
+  C:096DH         LINE#         50
+  C:0972H         LINE#         51
+  C:0978H         LINE#         52
+  C:097BH         LINE#         54
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        AWLCONTROLLER
+
+  -------         MODULE        ?C?COPY
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  06/22/2021  21:26:44  PAGE 5
+
+
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?CLDOPTR
+  C:08F6H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0186H BYTE (19%) *
+******************************************************************************
+
+Program Size: data=17.0 xdata=0 code=696
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

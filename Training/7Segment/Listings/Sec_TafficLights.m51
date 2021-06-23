@@ -1,0 +1,119 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    08/26/2020  08:35:52  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\sec_TrafficLights.obj TO .\Objects\Sec_TafficLights PRINT (.\Listings\Sec_TafficLi
+>> ghts.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\sec_TrafficLights.obj (SEC_TRAFFICLIGHTS)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  .\Objects\Sec_TafficLights (SEC_TRAFFICLIGHTS)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000CH     UNIT         _DATA_GROUP_
+            IDATA   0014H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     0062H     UNIT         ?PR?_TIME_DELAY?SEC_TRAFFICLIGHTS
+            CODE    0958H     0022H     UNIT         ?PR?MAIN?SEC_TRAFFICLIGHTS
+            CODE    097AH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0986H     000AH     UNIT         ?CO?SEC_TRAFFICLIGHTS
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Sec_TafficLights (SEC_TRAFFICLIGHTS)
+
+
+SEGMENT                                     DATA_GROUP 
+  +--> CALLED SEGMENT                     START    LENGTH
+---------------------------------------------------------
+?C_C51STARTUP                             -----    -----
+  +--> ?PR?MAIN?SEC_TRAFFICLIGHTS
+
+?PR?MAIN?SEC_TRAFFICLIGHTS                -----    -----
+  +--> ?PR?_TIME_DELAY?SEC_TRAFFICLIGHTS
+
+?PR?_TIME_DELAY?SEC_TRAFFICLIGHTS         0008H    000CH
+  +--> ?CO?SEC_TRAFFICLIGHTS
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Sec_TafficLights (SEC_TRAFFICLIGHTS)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/26/2020  08:35:52  PAGE 2
+
+
+  -------         MODULE        SEC_TRAFFICLIGHTS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:08F6H         PUBLIC        _Time_delay
+  C:0958H         PUBLIC        main
+  C:0986H         SYMBOL        _?ix1000
+  -------         PROC          _TIME_DELAY
+  D:0008H         SYMBOL        n
+  -------         DO            
+  D:000AH         SYMBOL        seg_data
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  D:0002H         SYMBOL        a
+  D:0082H         SYMBOL        b
+  -------         ENDDO         
+  C:08F6H         LINE#         7
+  C:08FAH         LINE#         8
+  C:090DH         LINE#         11
+  C:0919H         LINE#         12
+  C:0919H         LINE#         13
+  C:0920H         LINE#         14
+  C:0924H         LINE#         15
+  C:0924H         LINE#         16
+  C:092BH         LINE#         17
+  C:092EH         LINE#         18
+  C:0945H         LINE#         19
+  C:0950H         LINE#         20
+  C:0957H         LINE#         21
+  -------         ENDPROC       _TIME_DELAY
+  -------         PROC          MAIN
+  C:0958H         LINE#         23
+  C:0958H         LINE#         24
+  C:095BH         LINE#         25
+  C:095BH         LINE#         26
+  C:095EH         LINE#         27
+  C:0965H         LINE#         28
+  C:0968H         LINE#         29
+  C:096FH         LINE#         30
+  C:0972H         LINE#         31
+  C:0978H         LINE#         32
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        SEC_TRAFFICLIGHTS
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 008EH BYTE ( 6%) *
+******************************************************************************
+
+Program Size: data=21.0 xdata=0 code=403
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,81 @@
+C51 COMPILER V9.60.0.0   AWLCONTROLLER                                                     06/22/2021 21:26:44 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE AWLCONTROLLER
+OBJECT MODULE PLACED IN .\Objects\AWLcontroller.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.exe AWLcontroller.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\List
+                    -ings\AWLcontroller.lst) TABS(2) OBJECT(.\Objects\AWLcontroller.obj)
+
+line level    source
+
+   1          #include<regx51.h>
+   2          #include "lcd.h"
+   3          #define W_sensor P1
+   4          sbit in1=P3^5;
+   5          sbit in2=P3^6;
+   6          void stop_motor()
+   7          {
+   8   1        in1=0;
+   9   1        in2=0;
+  10   1        lcd_cmd(0xcc);
+  11   1        lcd_string("OF");
+  12   1      }
+  13          void run_motor()
+  14          {
+  15   1        in1=0;
+  16   1        in2=1;
+  17   1        lcd_cmd(0xcc);
+  18   1        lcd_string("ON");
+  19   1      }
+  20          void level(unsigned char dat){
+  21   1        int i;
+  22   1        unsigned char W_level[5]={0xF0,0xFC,0xFE,0xFF};
+  23   1        for(i=0;i<4;i++)
+  24   1        {
+  25   2          if(W_level[i]==dat)
+  26   2          {
+  27   3            lcd_cmd(0x8c);
+  28   3            lcd_data(i);
+  29   3          }
+  30   2        }
+  31   1      }
+  32          void main()
+  33          {
+  34   1        lcd_init();
+  35   1        lcd_cmd(0x80); //start at 1st row and 1st colmn
+  36   1        lcd_string("Automatic Water");
+  37   1        lcd_cmd(0xc0); //start at 2ndrow and 1st colmn
+  38   1        lcd_string("Level Controller");
+  39   1        lcd_init();
+  40   1        while(1)
+  41   1        {
+  42   2          lcd_cmd(0x80);
+  43   2          lcd_string("WaterLevel:  ");
+  44   2          lcd_cmd(0xc0);
+  45   2          lcd_string("MotorStatus:  ");
+  46   2          
+  47   2          level(W_sensor);
+  48   2          
+  49   2          if(W_sensor ==0xf0)
+  50   2          { run_motor(); }
+  51   2          else if(W_sensor == 0xff)
+  52   2          { stop_motor(); }
+  53   2          
+  54   2        }
+C51 COMPILER V9.60.0.0   AWLCONTROLLER                                                     06/22/2021 21:26:44 PAGE 2   
+
+  55   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    317    ----
+   CONSTANT SIZE    =     73    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      13
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

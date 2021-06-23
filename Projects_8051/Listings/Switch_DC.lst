@@ -1,0 +1,57 @@
+C51 COMPILER V9.60.0.0   SWITCH_DC                                                         06/22/2021 18:53:49 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SWITCH_DC
+OBJECT MODULE PLACED IN .\Objects\Switch_DC.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.exe Switch_DC.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings
+                    -\Switch_DC.lst) TABS(2) OBJECT(.\Objects\Switch_DC.obj)
+
+line level    source
+
+   1          #include<regx51.h>
+   2          #define W_sensor P1
+   3          #define Motor P3
+   4          void stop_motor();
+   5          void run_motor();
+   6          void delay(int n)
+   7            { int i,j;
+   8   1        for(i=0;i<10000;i++)
+   9   1        for( j=0;j<n;j++);
+  10   1      }
+  11          
+  12          int main(void){
+  13   1          while(1)
+  14   1          {
+  15   2            if (W_sensor == 0xF0){
+  16   3              run_motor();
+  17   3            }
+  18   2            else if(W_sensor ==0xFF)
+  19   2            {
+  20   3              stop_motor();
+  21   3            }
+  22   2          }
+  23   1        }
+  24          void run_motor()
+  25          {
+  26   1        Motor =0xA0;
+  27   1        delay(10);
+  28   1      }
+  29          void stop_motor()
+  30          {
+  31   1        Motor = 0x00;
+  32   1        delay(10);
+  33   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     80    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

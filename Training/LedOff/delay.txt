@@ -1,0 +1,22 @@
+#include<regx51.h>
+void delay(){
+ int a;
+ for(a=0;a<20;a++){
+  TMOD=0x10;
+  TH0=0x4c;
+  TL0=0x05;
+  TR0=1;
+  while(TF0==0);
+  TR0=0;
+  TF0=0;
+ }
+}
+sbit led=P2^0;
+void main(){
+ while(1){
+  led=0;
+  delay();
+  led=1;
+  delay();
+ }
+}

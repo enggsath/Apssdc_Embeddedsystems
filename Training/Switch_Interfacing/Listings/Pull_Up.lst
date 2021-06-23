@@ -1,0 +1,42 @@
+C51 COMPILER V9.60.0.0   PULL_UP                                                           08/20/2020 10:04:16 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE PULL_UP
+OBJECT MODULE PLACED IN .\Objects\Pull_Up.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Pull_Up.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\P
+                    -ull_Up.lst) TABS(2) OBJECT(.\Objects\Pull_Up.obj)
+
+line level    source
+
+   1          #include<regx51.h>
+   2          sbit led=P0^0;
+   3          sbit button=P1^0;
+   4          void delay(){
+   5   1        int i,j;
+   6   1        for(i=0;i<1000;i++)
+   7   1        for(j=0;j<20;j++);
+   8   1      }
+   9          void main(){
+  10   1        if (button==0){
+  11   2          led=1;
+  12   2          delay();
+  13   2        }
+  14   1        else{
+  15   2          led=0;
+  16   2          delay();
+  17   2        }
+  18   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     42    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,36 @@
+C51 COMPILER V9.60.0.0   LCD_INTERFACING                                                   08/26/2020 07:52:07 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LCD_INTERFACING
+OBJECT MODULE PLACED IN .\Objects\lcd_interfacing.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE lcd_interfacing.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Li
+                    -stings\lcd_interfacing.lst) TABS(2) OBJECT(.\Objects\lcd_interfacing.obj)
+
+line level    source
+
+   1          #include<regx51.h>
+   2          #include "lcd.h"
+   3          void main(){
+   4   1        lcd_init();
+   5   1        while(1)
+   6   1        {
+   7   2        lcd_cmd(0x80);
+   8   2        lcd_string("Welcome to");
+   9   2        lcd_cmd(0xc5);
+  10   2        lcd_string("APSSDC");
+  11   2        }
+  12   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    159    ----
+   CONSTANT SIZE    =     18    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

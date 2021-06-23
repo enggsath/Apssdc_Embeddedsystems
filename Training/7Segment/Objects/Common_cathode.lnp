@@ -1,0 +1,3 @@
+".\Objects\CommonCatgode.obj" 
+TO ".\Objects\Common_cathode" 
+PRINT(".\Listings\Common_cathode.m51")

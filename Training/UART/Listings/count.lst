@@ -1,0 +1,44 @@
+C51 COMPILER V9.60.0.0   COUNT                                                             08/27/2020 09:56:25 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE COUNT
+OBJECT MODULE PLACED IN .\Objects\count.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE count.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\cou
+                    -nt.lst) TABS(2) OBJECT(.\Objects\count.obj)
+
+line level    source
+
+   1          #include<regx51.h>
+   2          #include "uart.h"
+   3          sbit button =P1^0;
+   4          void main()
+   5          {
+   6   1        unsigned int count=0;
+   7   1        uart_init();
+   8   1        while(1)
+   9   1        {
+  10   2          if (button==0)
+  11   2          {
+  12   3            uart_string("count:");
+  13   3            count++;
+  14   3            uart_num(count);
+  15   3            uart_enter();
+  16   3          }
+  17   2          while(button==0);
+  18   2        }
+  19   1      }
+  20            
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    157    ----
+   CONSTANT SIZE    =      7    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      11
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

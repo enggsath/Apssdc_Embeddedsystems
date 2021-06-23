@@ -1,0 +1,94 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    08/20/2020  10:04:17  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Pull_Up.obj TO .\Objects\Pull_up PRINT (.\Listings\Pull_up.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Pull_Up.obj (PULL_UP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\Pull_up (PULL_UP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     001DH     UNIT         ?PR?DELAY?PULL_UP
+            CODE    081DH     000DH     UNIT         ?PR?MAIN?PULL_UP
+            CODE    082AH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Pull_up (PULL_UP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?PULL_UP
+
+?PR?MAIN?PULL_UP
+  +--> ?PR?DELAY?PULL_UP
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Pull_up (PULL_UP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        PULL_UP
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  C:0800H         PUBLIC        delay
+  B:0090H.0       PUBLIC        button
+  C:081DH         PUBLIC        main
+  B:0080H.0       PUBLIC        led
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/20/2020  10:04:17  PAGE 2
+
+
+  -------         PROC          DELAY
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0800H         LINE#         4
+  C:0800H         LINE#         6
+  C:0803H         LINE#         7
+  C:081CH         LINE#         8
+  -------         ENDPROC       DELAY
+  -------         PROC          MAIN
+  C:081DH         LINE#         9
+  C:081DH         LINE#         10
+  C:0820H         LINE#         11
+  C:0822H         LINE#         12
+  C:0822H         LINE#         13
+  C:0824H         LINE#         14
+  C:0824H         LINE#         15
+  C:0826H         LINE#         16
+  C:0829H         LINE#         17
+  C:0829H         LINE#         18
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        PULL_UP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 002AH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=57
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

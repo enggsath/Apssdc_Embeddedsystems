@@ -1,0 +1,3 @@
+".\Objects\AWLcontroller.obj" 
+TO ".\Objects\DC" 
+PRINT(".\Listings\DC.m51")

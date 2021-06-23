@@ -1,0 +1,3 @@
+".\Objects\keypad_7Seg.obj" 
+TO ".\Objects\Keypad_7seg" 
+PRINT(".\Listings\Keypad_7seg.m51")

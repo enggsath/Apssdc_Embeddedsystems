@@ -1,0 +1,40 @@
+C51 COMPILER V9.60.0.0   LED_SAMPLE                                                        08/18/2020 09:45:40 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LED_SAMPLE
+OBJECT MODULE PLACED IN .\Objects\led_sample.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE led_sample.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listing
+                    -s\led_sample.lst) TABS(2) OBJECT(.\Objects\led_sample.obj)
+
+line level    source
+
+   1          #include<regx51.h> //header file for 8051 M.C
+   2          sbit led=P2^0;//hardware declaration(pin declarations to variables)
+   3          void delay();//func declaration
+   4          void main(){
+   5   1        while(1){
+   6   2          led=0;//func call
+   7   2          delay();
+   8   2          led=1;
+   9   2          delay();
+  10   2        }
+  11   1      }
+  12          void delay(){
+  13   1        int i,j;
+  14   1        for(i=0;i<1000;i++)
+  15   1        for(j=0;j<100;j++);
+  16   1        }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     41    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
